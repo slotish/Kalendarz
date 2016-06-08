@@ -1,0 +1,133 @@
+h2 {
+  font-size: 24pt;
+  font-family: 'Open Sans', sans-serif !important ;
+  color: blue !important ;
+  text-align: center;
+}
+
+
+p {
+  font-size: 14pt;
+  font-family: 'Open Sans', sans-serif !important ;
+  text-align: justify;
+}
+
+
+html , body {
+
+  background-image: url("../images/denim.png") !important;
+  background-repeat: repeat;
+   /*
+    cursor: url("../images/movemouse.png"), pointer;
+    */
+}
+
+
+.send {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+}
+
+.content {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+
+#resizable {
+
+  margin: 0%;
+  padding: 0%;
+} 
+
+.layer1{
+  position: absolute;
+  z-index: 100;
+  margin: 0% !important;
+}
+
+.layer2{
+  position: absolute;
+  z-index: 200;
+  left: 37px;
+  top: 69px;
+  margin: 0% !important;
+}
+
+.layer3{
+  position: absolute;
+  z-index: 300;
+  margin: 0% !important;
+}
+
+.photo {
+  width:487px;
+  height: 329px;
+}
+ 
+
+.toolbar {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  position: fixed;
+  border-style: solid;
+  top: 40%;
+  padding: 10px;
+ }
+
+ .toolbox {
+  padding: 15%;
+  max-width: 50px;
+  max-height: 50px;
+ }
+
+ .toolbox:hover {
+  background-color: rgba(0, 0, 255, 0.2);
+ }
+
+ .overflow {
+  overflow: hidden;
+  position:relative;
+  height: 800px;
+  width:550px;
+}
+
+form .input-row { 
+  width: auto;
+  height: auto;  
+}
+
+
+.paddingleft {
+  padding-left:9%;
+}
+
+.form {
+  padding-bottom: 10%;
+}
+
+.addform {
+  padding-top: 10%;
+  padding-left:10%;
+  padding-bottom:10%;
+}
+
+.dayForm {
+  
+}
+
+.sizeForm {
+
+
+}
+
+.textarea {
+
+}
+
+
+ 
+  
+ 
+
+

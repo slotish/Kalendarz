@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="jquery2.1.4.min.js"></script>
+    <SCRIPT TYPE="text/javascript" SRC="site.js"></SCRIPT>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   
+</head>
+       
+
+<body>
+
+
+
+<!-- Nagłówek -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    	<h2> Prześlij zdjęcia: </h2>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+<!-- FORMULARZ -->
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+
+  <div class="form-group">
+    <label for="InputFile"><p>Okładka</p></label>
+    <input type="file"  name="fileToUpload" id="fileToUpload">
+  </div>  
+  
+  <div class="form-group">
+    <label for="InputFile"><p>Styczeń</p></label>
+    <input class="f" type="file" name="fileToUpload" id="fileToUpload">
+  </div>
+
+  <div class="form-group">
+    <label for="InputFile"><p>Luty</p></label>
+    <input type="file" >
+  </div>  
+  
+  <div class="form-group">
+    <label for="InputFile"><p>Marzec </p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Kwiecień</p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Maj</p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Czerwiec</p></label>
+    <input type="file" >
+  </div>  
+  
+  <div class="form-group">
+    <label for="InputFile"><p>Lipiec</p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Sierpień</p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Wrzesień</p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Październik</p></label>
+    <input type="file" >
+  </div>  
+  
+  <div class="form-group">
+    <label for="InputFile"><p>Listopad</p></label>
+    <input type="file" >
+  </div>  
+
+  <div class="form-group">
+    <label for="InputFile"><p>Grudzień</p></label>
+    <input type="file" >
+  </div>  
+
+    
+  <button type="submit" class="btn btn-default">Submit</button>
+
+</form>
+
+
+
+ </div>
+
+ <div class="col-md-4 col-md-offset-4">
+    
+ </div>
+
+ </div>
+
+
+ </div>
+
+
+ <div class="preview">
+    <img id="i" />
+ </div>
+ 
+
+
+
+
+
+</body>
+
+
+
+
+<script>
+
+
+
+
+$('.f').on('change', function(ev) {
+    var f = ev.target.files[0];
+    var fr = new FileReader();
+    
+    fr.onload = function(ev2) {
+        console.dir(ev2);
+        $('#i').attr('src', ev2.target.result);
+    };
+    
+    fr.readAsDataURL(f);
+});
+
+
+
+
+</script>
+
+
+
+
+
+</html>
