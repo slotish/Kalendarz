@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     loadPhoto();
     initPage();
-
+    initTextarea();
 
 });
 
@@ -11,6 +11,8 @@ $(document).ready(function() {
 
 var kalendar = []
 var currentPage;
+
+
 
 function handleMouseMove(event) {
     var dot, eventDoc, doc, body, pageX, pageY;
@@ -35,7 +37,7 @@ function handleMouseMove(event) {
     // Use event.pageX / event.pageY here
     currentPage.setMousePosition(event.pageX, event.pageY);
 };
-
+var writing = false;
 function initPage() {
 
 for(var i = 0 ; i < 12 ; i++){
@@ -58,7 +60,9 @@ kalendar[i] = new Page();
     };
 
     document.onmousemove = handleMouseMove;
+
     document.onkeydown = function(e) {
+        if (writing) return;
         switch (e.keyCode) {
             case 17:
                 currentPage.modifier = true;
@@ -88,6 +92,7 @@ kalendar[i] = new Page();
     };
 
     document.onkeyup = function(e) {
+        if (writing) return;
         switch (e.keyCode) {
             case 17:
                 currentPage.modifier = false;
@@ -97,9 +102,23 @@ kalendar[i] = new Page();
     };
 
     currentPage.setImage();
+
 }
 
+function initTextarea(){
 
+    
+    $("textarea").on("focus", function(){
+        writing = true;
+    });
+
+    $("textarea").on("focusout", function(){
+        writing = false;
+    });
+
+
+
+}
 
 function clickedButton(n) {
    
@@ -357,15 +376,11 @@ function Page() {
             rotate: currentPage.rotation,
             width: $(".photo").width(),
             height: $(".photo").height(),
-            forms: function(){
-                for ( i=1; i <= currentPage.formNumbers; i++){
-                    form: $(".addedForm" + i).value;
-                }
-            }
+                    
 
-        };
-   }
-}
+                };
+           }
+        }
 
 
 function Tool() {
@@ -461,12 +476,20 @@ function ResizeTool() {
 
 }
 
-function clone() {
-
-    $("#originalForm").clone().appendTo("#addedForm").addClass("addedForm" + currentPage.formNumbers);
-    ++ currentPage.formNumbers;
-    console.log(currentPage.formNumbers);
-
+function addDayPlate() {
+    $.get("newDayPlate.php",{id:currentPage.formNumbers}).done(function(data){
+        var $newPlate = $(data);
+        $newPlate.on("load", function(){alert("dzia\n\n\n")});
+        /*$newPlate.on("focus", function(){
+            writing = true;
+        });
+        $newPlate.on("focusout", function(){
+            writing = false;
+        });*/
+        $("#addedForm").append($newPlate);
+    });
+    initTextarea(currentPage.formNumbers);
+    currentPage.formNumbers++;
 }
 
 
