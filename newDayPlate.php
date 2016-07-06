@@ -1,4 +1,13 @@
-<div <?echo "id=\"dayPlate".$_GET["id"]."\"";?> class="input-row form">
+<?
+if  (!array_key_exists ( "id", $_GET ) ) {
+    echo "Missing data";
+    die;
+}
+
+$safe_id = filter_var($_GET["id"], FILTER_SANITIZE_STRING);
+?>
+
+<div <?echo "id=\"dayPlate".$safe_id."\"";?> class="input-row form">
     <label class="paddingleft">
         <select name="day" class="dayForm">
         <?
@@ -18,5 +27,5 @@
     <label class="paddingleft">
         <input type="color" name="favcolor" value="#000000">
     </label>
-    <textarea <?echo "id=\"dayPlateTextArea".$_GET["id"]."\"";?> class="form-control textarea" rows="2"></textarea>&nbsp;
+    <textarea <?echo "id=\"dayPlateTextArea".$safe_id."\"";?> class="form-control textarea" rows="2"></textarea>&nbsp;
 </div>

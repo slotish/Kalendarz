@@ -376,7 +376,7 @@ function Page() {
             rotate: currentPage.rotation,
             width: $(".photo").width(),
             height: $(".photo").height(),
-                    
+            
 
                 };
            }
@@ -508,6 +508,7 @@ function sendData(){
         cache: false,
         contentType: false,
         processData: false
+
     });
 
     
@@ -563,3 +564,6 @@ for (var i = 0 ; i < 1000 ; i++){
 
 // zrób rotateRight i rotateLeft
 // resetowanie akcji;
+
+// zrób serializacje dayPlate
+// i weź "ułóż" ją w submit.php
