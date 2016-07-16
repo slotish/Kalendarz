@@ -1,7 +1,13 @@
 <?
 function userDataUnSerialize($data){
+	
 	$result = "Dane użytkownika:\n";
-	$result .= "\tPrzesuniecie poziome:".$data["offsetX"];
+	$result .= "\nPrzesuniecie poziome:".$data["offsetX"];
+	$result .= "\nPrzesuniecie pionowe:".$data["offsetY"];
+	$result .= "\nObrót:".$data["rotate"];
+	$result .= "\nSzerokość:".$data["width"];
+	$result .= "\nWysokość:".$data["height"];
+		
 
 	return $result;
 }

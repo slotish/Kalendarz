@@ -376,7 +376,33 @@ function Page() {
             rotate: currentPage.rotation,
             width: $(".photo").width(),
             height: $(".photo").height(),
-            
+            addCommentedDays: function(){
+            	var tab = [];
+            	for (i=1; i <= currentPage.formNumbers; i++){
+            		tmp = "#dayFormPlate" + i;
+            		tab.push($(tmp).val());
+            		
+            	}
+            	return tab;
+            },
+            color: function(){
+                var tab = [];
+                for (i=1; i <= currentPage.formNumbers; i++){
+                    tmp = "#colorFormPlate" + i;
+                    tab.push($(tmp).val());
+                    
+                }
+                return tab;
+            },
+            textareaComment: function(){
+            	var tab = [];
+                for (i=1; i <= currentPage.formNumbers; i++){
+                    tmp = "#dayPlateTextArea" + i;
+                    tab.push($(tmp).val());
+                    
+                }
+                return tab;
+            }
 
                 };
            }
