@@ -7,7 +7,9 @@ function userDataUnSerialize($data){
 	$result .= "\nObrót:".$data["rotate"];
 	$result .= "\nSzerokość:".$data["width"];
 	$result .= "\nWysokość:".$data["height"];
-		
+	$result .= "\nDni kalendarza:".$data['addCommentedDays'];
+	$result .= "\nKolor kroju pisma:".$data['color'];
+	$result .= "\nKomentarz:".$data['textareaComment'];
 
 	return $result;
 }
