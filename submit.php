@@ -11,6 +11,10 @@ function userDataUnSerialize($data){
 	$result .= "\nKolor kroju pisma:".$data['color'];
 	$result .= "\nKomentarz:".$data['textareaComment'];
 
+	foreach ($data as $klucz => $wartosc)
+	echo $klucz." ===> ".$wartosc."<br>\n";
+
+
 	return $result;
 }
 
@@ -23,9 +27,5 @@ chmod("uploads/".session_id(), 0777);
 var_dump($_POST);
 $file = "uploads/".session_id()."/user_data.txt";
 file_put_contents($file, userDataUnSerialize($_POST));
-
-
-
-
 
 ?>
