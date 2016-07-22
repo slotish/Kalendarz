@@ -369,6 +369,12 @@ function Page() {
         });
    }
 
+   this.serializedData = {};
+
+   this.save = function(){
+   		this.serializedData = this.serialize();
+   }
+
    this.serialize = function(){
         return {
             offsetX: $("#i").offset().left,
@@ -398,7 +404,10 @@ function Page() {
             	var tab = [];
                 for (i=1; i <= currentPage.formNumbers; i++){
                     tmp = "#dayPlateTextArea" + i;
-                    tab.push($(tmp).val());
+                    if ($(tmp).val() == undefined){
+                    	continue ;
+                    }
+                    tab.push($(tmp).val().replace(",","/comma/"));
                     
                 }
                 return tab;
@@ -520,8 +529,22 @@ function addDayPlate() {
 
 
 function sendData(){
- 
-    var formData = new FormData($('#getImage')[0]);
+	currentPage.save();
+	$.post( "submit.php", currentPage.serializedData)
+        .done(function( data ) {
+            alert( "Data Loaded: " + data );
+			var formData = new FormData($('#getImage')[0]);
+			    $.ajax({
+			        url: 'upload.php',  //Server script to process data
+			        type: 'POST',
+			        data: formData,
+			        cache: false,
+			        contentType: false,
+			        processData: false
+
+			    });
+    });
+    /*var formData = new FormData($('#getImage')[0]);
     $.ajax({
         url: 'upload.php',  //Server script to process data
         type: 'POST',
@@ -536,7 +559,7 @@ function sendData(){
         processData: false
 
     });
-
+*/
     
 }
 
@@ -585,11 +608,5 @@ for (var i = 0 ; i < 1000 ; i++){
 */
 
 
-//$('#i').parent().draggable();
-//$('#i').resizable();
-
-// zrób rotateRight i rotateLeft
-// resetowanie akcji;
-
-// zrób serializacje dayPlate
-// i weź "ułóż" ją w submit.php
+// Wyczyść stronę onclick a potem spraw aby na podstawie danych z Current Page sie ustawiła !  Nie obijaj się !
+// Clean i Load!

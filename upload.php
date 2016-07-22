@@ -4,7 +4,7 @@
 
 
 
-
+session_start();
 
 $target_dir = "uploads/".session_id()."/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

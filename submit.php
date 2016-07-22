@@ -7,13 +7,20 @@ function userDataUnSerialize($data){
 	$result .= "\nObrót:".$data["rotate"];
 	$result .= "\nSzerokość:".$data["width"];
 	$result .= "\nWysokość:".$data["height"];
-	$result .= "\nDni kalendarza:".$data['addCommentedDays'];
-	$result .= "\nKolor kroju pisma:".$data['color'];
-	$result .= "\nKomentarz:".$data['textareaComment'];
+	//$result .= "\nDni kalendarza:".$data['addCommentedDays'];
+	//$result .= "\nKolor kroju pisma:".$data['color'];
+	//$result .= "\nKomentarz:".$data['textareaComment'];
 
-	foreach ($data as $klucz => $wartosc)
-	echo $klucz." ===> ".$wartosc."<br>\n";
-
+	$days = explode(",", $data['addCommentedDays']);
+	$colors = explode(",", $data['color'] );
+	$comments = explode(",",$data['textareaComment']);
+	$result .= "\nDni kalendarza:\n";
+	// WARNING: to -1 może byc przyczyną problemów w przyszłości!
+	for ($x=0; $x<count($days)-1; $x++){
+		$result .= "\t Dzień:".$days[$x]."\n";
+		$result .= "\t Kolor:".$colors[$x]."\n";
+		$result .= "\t Komentarz:".str_replace("/comma/",",",$comments[$x])."\n";
+	}
 
 	return $result;
 }
