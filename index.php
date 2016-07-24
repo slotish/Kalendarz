@@ -35,6 +35,8 @@ session_start();
         <div class="col-md-4">
           <input type="button" id="saveData" onclick="saveData()" value="Zapisz">
           <input type="button" id="sendData" onclick="sendData()" value="Wyślij">
+          <input type="button" id="cleanData" onclick="cleanData()" value="Czyść">
+          <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
         </div>
         <div class="col-md-6">
             <h2> Prześlij zdjęcia: </h2>

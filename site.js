@@ -190,27 +190,21 @@ function clickedButton(n) {
 };
 
 function loadPhoto() {
-
     $('.f').on('change', function(ev) {
         var f = ev.target.files[0];
         var fr = new FileReader();
-
         fr.onload = function(ev2) {
             console.dir(ev2);
-
             $('#i').attr('src', ev2.target.result);
-
-
         };
-
         fr.readAsDataURL(f);
-
-
-
     });
 
 
 }
+
+
+
 
 function moveImage(_x, _y) {
 
@@ -254,15 +248,23 @@ function checkImageClick(p, q) {
 }
 
 function Image(){
+	
+    this.picturePosition = $("#i").offset()
+    
     this.originalWidth = $(".photo").width();
     this.originalHeight = $(".photo").height();
     this.ratio = this.originalWidth / this.originalHeight;
     this.reset = function(){
         $(".photo").width(this.originalWidth);
         $(".photo").height(this.originalHeight);
+        $(".photo").offset({
+        top: this.picturePosition.top,
+        left: this.picturePosition.left
+    });
     }
 }
 
+var resetImageData = new Image();
 
 function Page() {
 
@@ -565,6 +567,22 @@ function sendData(){
 
 function saveData(){
     //sendImage();
+}
+
+function cleanData(){
+  currentPage.save();
+  var tmp = Math.abs(currentPage.rotation);
+  currentPage.rotate(tmp);
+  currentPage.rotation = 0;
+  resetImageData.reset();
+  for (var i=1; i<=currentPage.formNumbers; i++){
+  		$("#dayPlate" + i).remove();
+  }
+  $("#cleanData").prop('disabled', true);
+}
+
+function loadData(){
+	$("#cleanData").prop('disabled', false);
 }
 
 function sendImage(){
