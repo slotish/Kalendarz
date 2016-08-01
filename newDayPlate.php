@@ -27,5 +27,5 @@ $safe_id = filter_var($_GET["id"], FILTER_SANITIZE_STRING);
     <label class="paddingleft">
         <input type="color" <?echo "id=\"colorFormPlate".$safe_id."\"";?> name="favcolor" value="#000000">
     </label>
-    <textarea <?echo "id=\"dayPlateTextArea".$safe_id."\"";?> class="form-control textarea" rows="2"></textarea>&nbsp;
+    <textarea maxlength="15" placeholder="maksymalnie 15 znaków :)"<?echo "id=\"dayPlateTextArea".$safe_id."\"";?> class="form-control textarea" rows="2"></textarea>&nbsp;
 </div>

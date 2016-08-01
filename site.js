@@ -579,10 +579,22 @@ function cleanData(){
   		$("#dayPlate" + i).remove();
   }
   $("#cleanData").prop('disabled', true);
+ 
 }
 
 function loadData(){
 	$("#cleanData").prop('disabled', false);
+	console.log(currentPage.serializedData.offsetX);
+	$("#i").offset({
+        top: currentPage.serializedData['offsetY'],
+        left: currentPage.serializedData['offsetX'],
+    });
+    $(".photo").width(currentPage.serializedData["width"]);
+    $(".photo").height(currentPage.serializedData["height"]);
+    console.log(currentPage.serializedData["rotate"]);
+    var tmp = Math.abs(currentPage.serializedData["rotate"]);
+    currentPage.rotate(tmp);
+
 }
 
 function sendImage(){
