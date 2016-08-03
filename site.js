@@ -375,6 +375,7 @@ function Page() {
 
    this.save = function(){
    		this.serializedData = this.serialize();
+   		console.log(this.serializedData)
    }
 
    this.serialize = function(){
@@ -388,20 +389,26 @@ function Page() {
             	var tab = [];
             	for (i=1; i <= currentPage.formNumbers; i++){
             		tmp = "#dayFormPlate" + i;
+            		 if ($(tmp).val() == undefined){
+                    	continue ;
+                    }
             		tab.push($(tmp).val());
             		
             	}
             	return tab;
-            },
+            }(),
             color: function(){
                 var tab = [];
                 for (i=1; i <= currentPage.formNumbers; i++){
                     tmp = "#colorFormPlate" + i;
+                     if ($(tmp).val() == undefined){
+                    	continue ;
+                    }
                     tab.push($(tmp).val());
                     
                 }
                 return tab;
-            },
+            }(),
             textareaComment: function(){
             	var tab = [];
                 for (i=1; i <= currentPage.formNumbers; i++){
@@ -409,11 +416,11 @@ function Page() {
                     if ($(tmp).val() == undefined){
                     	continue ;
                     }
-                    tab.push($(tmp).val().replace(",","/comma/"));
+                    tab.push($(tmp).val());
                     
                 }
                 return tab;
-            }
+            }()
 
                 };
            }
@@ -571,7 +578,7 @@ function saveData(){
 
 function cleanData(){
   currentPage.save();
-  var tmp = Math.abs(currentPage.rotation);
+  var tmp = -(currentPage.rotation);
   currentPage.rotate(tmp);
   currentPage.rotation = 0;
   resetImageData.reset();
@@ -592,8 +599,25 @@ function loadData(){
     $(".photo").width(currentPage.serializedData["width"]);
     $(".photo").height(currentPage.serializedData["height"]);
     console.log(currentPage.serializedData["rotate"]);
-    var tmp = Math.abs(currentPage.serializedData["rotate"]);
+    var tmp = currentPage.serializedData["rotate"];
     currentPage.rotate(tmp);
+
+
+	$.post("newDayPlate.php",{group:true, days:currentPage.serializedData['addCommentedDays'] , colors:currentPage.serializedData['color'] , comments:currentPage.serializedData['textareaComment'] }).done(function(data){
+        var $newPlate = $(data);
+        $newPlate.on("load", function(){alert("dzia\n\n\n")});
+   
+        $("#addedForm").append($newPlate);
+
+        currentPage.formNumbers = 0;
+	    for (var i=0;i<currentPage.serializedData['addCommentedDays'].length; i++){
+	    	initTextarea(currentPage.formNumbers);
+	    	++currentPage.formNumbers;
+	    }
+    });
+    ;
+
+	
 
 }
 
@@ -622,7 +646,13 @@ function sendImage(){
     });
 }
 
+//zrobic przyciski prev i next
 
+//Po nacisnieciu na next, currentPage ma byc zapisane w kalendarz[obecny_miesiac]
+//nastepnie ma byc wyczysc
+//obecny miesiac ma byc zwiekszony o 1
+//Potem currentPage = kalendarz[obecny_miesiac]
+//i na koncu currentPage load
 
 
 /*
@@ -640,3 +670,4 @@ for (var i = 0 ; i < 1000 ; i++){
 
 // Wyczyść stronę onclick a potem spraw aby na podstawie danych z Current Page sie ustawiła !  Nie obijaj się !
 // Clean i Load!
+

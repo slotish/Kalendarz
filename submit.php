@@ -11,15 +11,18 @@ function userDataUnSerialize($data){
 	//$result .= "\nKolor kroju pisma:".$data['color'];
 	//$result .= "\nKomentarz:".$data['textareaComment'];
 
-	$days = explode(",", $data['addCommentedDays']);
-	$colors = explode(",", $data['color'] );
-	$comments = explode(",",$data['textareaComment']);
+	//$days = explode(",", $data['addCommentedDays']);
+	//$colors = explode(",", $data['color'] );
+	//$comments = explode(",",$data['textareaComment']);
+	$days = $data['addCommentedDays'];
+	$colors = $data['color'] ;
+	$comments = $data['textareaComment'];
 	$result .= "\nDni kalendarza:\n";
 	// WARNING: to -1 może byc przyczyną problemów w przyszłości!
-	for ($x=0; $x<count($days)-1; $x++){
+	for ($x=0; $x<count($days); $x++){
 		$result .= "\t Dzień:".$days[$x]."\n";
 		$result .= "\t Kolor:".$colors[$x]."\n";
-		$result .= "\t Komentarz:".str_replace("/comma/",",",$comments[$x])."\n";
+		$result .= "\t Komentarz:".$comments[$x]."\n";
 	}
 
 	return $result;
