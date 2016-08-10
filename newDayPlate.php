@@ -6,9 +6,11 @@ $selected = array();
 
 if  (array_key_exists ( "group", $_POST ) ) {
     $fromID = 1;
-    $count = count($_POST["days"]);
-    for ($x=0; $x<$count; $x++){
-        $selected[$x] = array("day"=>$_POST["days"][$x], "color" => $_POST["colors"][$x], "comment" => $_POST["comments"][$x]);
+    if  (array_key_exists ( "days", $_POST ) ){
+        $count = count($_POST["days"]);
+        for ($x=0; $x<$count; $x++){
+            $selected[$x] = array("day"=>$_POST["days"][$x], "color" => $_POST["colors"][$x], "comment" => $_POST["comments"][$x]);
+        }
     }
 } elseif  (!array_key_exists ( "id", $_GET ) ) {
     echo "Missing data";

@@ -37,6 +37,8 @@ session_start();
           <input type="button" id="sendData" onclick="sendData()" value="Wyślij">
           <input type="button" id="cleanData" onclick="cleanData()" value="Czyść">
           <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
+          <input type="button" id="prevButton" onclick="prevPage()" value="Cofnij">
+          <input type="button" id="nextButton" onclick="nextPage()" value="Następna">
         </div>
         <div class="col-md-6">
             <h2> Prześlij zdjęcia: </h2>
@@ -72,7 +74,7 @@ session_start();
                         </tr>
                         <tr>
                             <td>
-                                <img src="images/rotateright.png" id="button3" class="img-responsive toolbox   center-block secondButton" onclick="currentPage.rotateRight(45)">
+                                <img src="images/rotateright.png" id="button3" class="img-responsive toolbox   center-block secondButton" onclick="rotateRightWrapper(45)">
                             </td>
                         </tr>
                         <tr>

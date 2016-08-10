@@ -1,12 +1,33 @@
 $(document).ready(function() {
 
     loadPhoto();
-    initPage();
+    initCalendar();
     initTextarea();
 
 });
+var pageCounter;
 
+function nextPage(){
+	if (pageCounter >= 11){
+		return false;
+	}
+	cleanData();
+	pageCounter++;
+	currentPage = kalendar[pageCounter];
+	initPage();	
+	loadData();
+}
 
+function prevPage(){
+	if (pageCounter <= 0){
+		return false;
+	}
+	cleanData();		
+	pageCounter--;
+	currentPage = kalendar[pageCounter];
+	initPage();
+	loadData();
+}
 
 
 var kalendar = []
@@ -37,18 +58,28 @@ function handleMouseMove(event) {
     // Use event.pageX / event.pageY here
     currentPage.setMousePosition(event.pageX, event.pageY);
 };
+
+function initCalendar(){
+
+	console.log("Work?")
+	for(var i = 0 ; i < 12 ; i++){
+		kalendar[i] = new Page();
+		kalendar[i].addTool(new MoveTool(), 1);
+    	kalendar[i].addTool(new RotateTool(), 3);
+    	kalendar[i].addTool(new ResizeTool(), 2);
+	}
+	currentPage = kalendar[0];
+	pageCounter = 0;
+	initPage();
+	console.log(currentPage)
+}
+
 var writing = false;
 function initPage() {
 
-for(var i = 0 ; i < 12 ; i++){
-kalendar[i] = new Page();
-}
-    currentPage = kalendar[0];
-
-    currentPage.addTool(new MoveTool(), 1);
-    currentPage.addTool(new RotateTool(), 3);
-    currentPage.addTool(new ResizeTool(), 2);
-
+	
+    
+    
     setInterval(function() {
         currentPage.frame()
     }, 10);
@@ -102,6 +133,10 @@ kalendar[i] = new Page();
     };
 
     currentPage.setImage();
+    currentPage.switchOffTools();
+
+
+
 
 }
 
@@ -348,7 +383,9 @@ function Page() {
    }
 
    this.rotateRight = function(n){
+   	console.log("rotateRightWrapper12" + this.rotation);
         this.rotation += n;
+        console.log("rotateRightWrapper2" + this.rotation);
         $('#i').rotate(this.rotation);
         clickedButton(3);
    }
@@ -360,6 +397,7 @@ function Page() {
    }
 
    this.rotate = function(n){
+   	console.log("rotate: " + n)
         this.rotation += n;
         $('#i').rotate(this.rotation);
    }
@@ -371,7 +409,7 @@ function Page() {
         });
    }
 
-   this.serializedData = {};
+   this.serializedData = undefined;
 
    this.save = function(){
    		this.serializedData = this.serialize();
@@ -590,8 +628,12 @@ function cleanData(){
 }
 
 function loadData(){
+
 	$("#cleanData").prop('disabled', false);
-	console.log(currentPage.serializedData.offsetX);
+	if (!currentPage.serializedData){
+		return;
+	  }
+	console.log(currentPage.serializedData);
 	$("#i").offset({
         top: currentPage.serializedData['offsetY'],
         left: currentPage.serializedData['offsetX'],
@@ -646,6 +688,13 @@ function sendImage(){
     });
 }
 
+
+function rotateRightWrapper(n){
+	console.log("rotateRightWrapper");
+	currentPage.rotateRight(n);
+
+}
+
 //zrobic przyciski prev i next
 
 //Po nacisnieciu na next, currentPage ma byc zapisane w kalendarz[obecny_miesiac]
@@ -670,4 +719,10 @@ for (var i = 0 ; i < 1000 ; i++){
 
 // Wyczyść stronę onclick a potem spraw aby na podstawie danych z Current Page sie ustawiła !  Nie obijaj się !
 // Clean i Load!
+
+
+
+
+
+
 
