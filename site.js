@@ -13,26 +13,30 @@ function nextPage(){
 	}
 	cleanData();
 	pageCounter++;
+	initPage();
 	currentPage = kalendar[pageCounter];
-	initPage();	
+		
 	loadData();
+	console.log(currentPage.rotation);
+	console.log(currentPage.serializedData);
 }
 
 function prevPage(){
 	if (pageCounter <= 0){
 		return false;
 	}
+	console.log(currentPage.rotation);
 	cleanData();		
 	pageCounter--;
-	currentPage = kalendar[pageCounter];
 	initPage();
+	currentPage = kalendar[pageCounter];
 	loadData();
+	console.log(currentPage.serializedData);
 }
 
 
 var kalendar = []
 var currentPage;
-
 
 
 function handleMouseMove(event) {
@@ -134,9 +138,6 @@ function initPage() {
 
     currentPage.setImage();
     currentPage.switchOffTools();
-
-
-
 
 }
 
@@ -640,7 +641,6 @@ function loadData(){
     });
     $(".photo").width(currentPage.serializedData["width"]);
     $(".photo").height(currentPage.serializedData["height"]);
-    console.log(currentPage.serializedData["rotate"]);
     var tmp = currentPage.serializedData["rotate"];
     currentPage.rotate(tmp);
 
@@ -651,7 +651,7 @@ function loadData(){
    
         $("#addedForm").append($newPlate);
 
-        currentPage.formNumbers = 0;
+        //currentPage.formNumbers = 0;
 	    for (var i=0;i<currentPage.serializedData['addCommentedDays'].length; i++){
 	    	initTextarea(currentPage.formNumbers);
 	    	++currentPage.formNumbers;
