@@ -152,8 +152,6 @@ function initTextarea(){
         writing = false;
     });
 
-
-
 }
 
 function clickedButton(n) {
@@ -719,6 +717,11 @@ for (var i = 0 ; i < 1000 ; i++){
 
 // Wyczyść stronę onclick a potem spraw aby na podstawie danych z Current Page sie ustawiła !  Nie obijaj się !
 // Clean i Load!
+
+
+
+
+
 
 
 

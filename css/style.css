@@ -1,31 +1,105 @@
+h1 {
+  font-size: 38pt;
+  font-family: 'Patrick Hand', cursive !important ;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
 h2 {
-  font-size: 24pt;
-  font-family: 'Open Sans', sans-serif !important ;
-  color: blue !important ;
+  font-size: 32pt;
+  font-family: 'Patrick Hand', cursive !important ;
   text-align: center;
 }
 
 
 p {
-  font-size: 14pt;
-  font-family: 'Open Sans', sans-serif !important ;
+  font-size: 22pt;
+  font-family: 'Patrick Hand', cursive !important ;
   text-align: justify;
+  line-height: 150%;
+}
+
+p.centered {
+  text-align: center;
 }
 
 
 html , body {
 
-  background-image: url("../images/denim.png") !important;
+  background-image: url("../images/inflicted.png") ;
   background-repeat: repeat;
    /*
     cursor: url("../images/movemouse.png"), pointer;
     */
 }
 
+.text_no_1:hover, .text_no_2:hover, .text_no_3:hover, .text_no_4:hover  {
+    text-shadow: 0 0 10px #858585; 
+}
 
-.send {
+
+
+#top_menu {
   background-image: url("../images/crossword.png") !important;
   background-repeat: repeat;
+  border-bottom: solid 1px #000;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+.top_menu_text {
+  line-height: 80px;
+  font-size: 22pt;
+}
+
+
+a {
+  color: #000 !important;
+}
+
+a:visited, a:link {
+  text-decoration: none !important;
+
+}
+
+a:hover, a:active {
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 720px) {
+  .top_menu_text {
+    text-align: center;
+    font-size: 18;
+  }
+
+  .top_menu_logo {
+    width: 20%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+}
+
+.teaser {
+  background-color: black !important;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 1000 !important;
+}
+
+.padding_menu {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
 }
 
 .content {
