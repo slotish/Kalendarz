@@ -1,12 +1,12 @@
 h1 {
-  font-size: 38pt;
+  font-size: 62pt !important;
   font-family: 'Patrick Hand', cursive !important ;
   text-align: center;
   padding-bottom: 15px;
 }
 
 h2 {
-  font-size: 32pt;
+  font-size: 32pt !important;
   font-family: 'Patrick Hand', cursive !important ;
   text-align: center;
 }
@@ -23,6 +23,11 @@ p.centered {
   text-align: center;
 }
 
+p.greeting {
+  font-size: 32pt;
+  padding-bottom: 10%;
+}
+
 
 html , body {
 
@@ -33,7 +38,7 @@ html , body {
     */
 }
 
-.text_no_1:hover, .text_no_2:hover, .text_no_3:hover, .text_no_4:hover  {
+.text_no_1:hover, .text_no_2:hover, .text_no_3:hover, .text_no_4:hover, .text_no_5:hover {
     text-shadow: 0 0 10px #858585; 
 }
 
@@ -51,6 +56,19 @@ html , body {
   width: 100%;
   z-index: 1000;
 
+}
+
+#bottom_menu {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  border-top: solid 1px #000;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1000;
 }
 
 .top_menu_text {
@@ -86,15 +104,55 @@ a:hover, a:active {
     padding-top: 25px;
     padding-bottom: 25px;
 
-}
+  }
 }
 
 .teaser {
-  background-color: black !important;
-  display: block;
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  z-index: 1000 !important;
+  border: ridge 1px #000;
+
+  -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+}
+
+.calendar_menu_row {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.teaser_button {
   margin-right: auto;
   margin-left: auto;
-  z-index: 1000 !important;
+  display: block;
+  padding-right: 5%;
+  padding-left: 5%;
+  margin-bottom: 5%;
+  border: 2px solid #000;
+  border-radius: 50%;
+
+}
+  .teaser_button:hover {
+  background-color: #50A150;
+  -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+}
+
+#back_to_top {
+  text-align: center;
 }
 
 .padding_menu {

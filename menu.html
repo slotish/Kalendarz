@@ -13,18 +13,18 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css">
     <!-- Scripts -->
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
 <div id="top_menu">
+  <a name="top_Anchor" id="top_Anchor">
   <div class="row">
     <div class="col-sm-1 col-md-1 col-lg-1">
     </div>
     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-      <a href="/kalendarz/index.php"><img class="top_menu_logo" src="images/Logo.png"></a>
+      <a href="http://drukarniarawicz.pl"><img class="top_menu_logo" src="images/Logo.png"></a>
     </div>
     
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
@@ -62,8 +62,9 @@
       <p>
         Aby przejśc do internetowego kreatora, wystarczy, że wybierzesz interesujący cię szablon i uzupełnisz poszczególne miesiące ulubionymi fotografiami. Jeśli potrzebujesz wsparcia - kliknij przycisk "Pomoc" na górnej belce menu.
       </p>
-      <p class="centered">
+      <p class="centered greeting">
         Zapraszamy!
+        <br>
       </p>
     </div>
   </div>
@@ -72,13 +73,110 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <div class="teaser">
-        <img src="images/teaser_1.png">
+        <!-- KARUZELA 1 -->
+              <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="images/teaser_1.png" alt="..." class="img-responsive center-block">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="images/teaser_1.png" alt="..." class="img-responsive center-block">
+                    <div class="carousel-caption">
+                     
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="images/teaser_1.png" alt="..." class="img-responsive center-block">
+                    <div class="carousel-caption">
+                      
+                    </div>
+                  </div>
+                </div>
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+              </div>
+              <!-- KARUZELA 1  KONIEC-->
+          <div> 
+            <h2>
+              'WODA'
+            <h2>
+            <p class="calendar_menu_row">
+              Zbiór grafik prezentujący piekno tego podstawowego zywiołu. Zdjęcia dopasowane do pory roku i klimatu danego miesiąca. Bardzo lekka i wygodna kompozycja utrzymana w jasnych tonacjach - przyjemna dla oka i miła w odbiorze. 
+            </p>
+          </div>
+          <div >
+            <button type="button" onclick="window.location.href='/kalendarz/index.php'" class="teaser_button"> <p> Przejdź do projektu </p> </button>
+          </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
       <div class="teaser">
-        <img src="images/teaser_1.png">
+        <!-- KARUZELA 2 -->
+              <div id="carousel2" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="images/teaser_k_1.png" alt="..." class="img-responsive center-block">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="images/teaser_k_2.png" alt="..." class="img-responsive center-block">
+                    <div class="carousel-caption">
+                     
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="images/teaser_k_3.png" alt="..." class="img-responsive center-block">
+                    <div class="carousel-caption">
+                      
+                    </div>
+                  </div>
+                </div>
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel2" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel2" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+              </div>
+              <!-- KARUZELA 2  KONIEC-->
+          <div> 
+            <h2>
+              'KWIATY'
+            <h2>
+            <p class="calendar_menu_row">
+              Ten kalendarz oparty jest na motywach kwiatów. Na każdy miiesiąc przygotowalismy specjalną grafikę. Bardzo uniwersalny projekt - świetnie nadaje się na ozdobę w mieszkaniu a także jako prezent okolicznościowy lub dla bliskiej nam osoby!
+            </p>
+          </div>
+          <div >
+            <button type="button" onclick="window.location.href='/kalendarz/index.php'" class="teaser_button"> <p> Przejdź do projektu </p> </button>
+          </div>
       </div>
+    </div>
+  </div>
+</div>
+<div id="bottom_menu">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+      <a href="http://drukarniarawicz.pl"><img class="img-responsive center-block" src="images/Logo.png"></a>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+      
+      <p id="back_to_top" class="top_menu_text text_no_5"><a href="#top_Anchor"> Powrót na górę strony </a></p>
     </div>
   </div>
 </div>
@@ -89,5 +187,6 @@
   <script type="text/javascript" src="jquery2.1.4.min.js"></script>
   <script type="text/javascript" src="jqueryrotate.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <SCRIPT TYPE="text/javascript" SRC="menu.js"></SCRIPT>
 </html>
