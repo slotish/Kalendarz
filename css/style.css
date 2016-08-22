@@ -121,9 +121,60 @@ a:hover, a:active {
   -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
   box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
 }
+.teaser2 {
+  width: 495px;
+  height: 700px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  z-index: 1000 !important;
+  background-image: url("../images/crossword.png") !important;
+  -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  margin-right: auto !important;
+  margin-left: auto !important;
+  display: block !important;
+  
+}
+
+.relativepic {
+  position: relative;
+  bottom: 95%;
+  z-index: 100;
+}
 
 .carousel-control.left, .carousel-control.right {
     background-image: none !important;
+}
+
+.carousel.carousel-fade .item {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  opacity:0.4;
+}
+
+.carousel.carousel-fade .active.item {
+  opacity:1;
+}
+
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0.8);
+}
+
+.carousel.carousel-fade .next,
+.carousel.carousel-fade .prev {
+  left: 0;
+  z-index: 1;
+}
+
+.carousel.carousel-fade .carousel-control {
+  z-index: 3;
 }
 
 .calendar_menu_row {
@@ -153,6 +204,10 @@ a:hover, a:active {
 
 #back_to_top {
   text-align: center;
+}
+
+.button_text {
+  padding-top: 5%;
 }
 
 .padding_menu {

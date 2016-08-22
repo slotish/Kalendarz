@@ -1,8 +1,15 @@
 
 
 $( document ).ready(function() {
-    $('.carousel').carousel();
+    $('.carousel').carousel({
+    	interval: 5000,
+    	pause: null
+    });
     smoothScroll(1000);
+
+//picCarousel();
+
+    
 });
 
 function smoothScroll(speed) {
@@ -13,3 +20,4 @@ function smoothScroll(speed) {
         event.preventDefault();
     });
 }
+
