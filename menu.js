@@ -1,11 +1,33 @@
 
 
 $( document ).ready(function() {
-    $('.carousel').carousel({
+    $('.first_carousel').carousel({
+    	interval: 3000,
+    	pause: null
+    });
+
+    $('.second_carousel').carousel({
     	interval: 5000,
     	pause: null
     });
     smoothScroll(1000);
+
+    $('.firstCalendar').mouseover(function(){
+    	$('.firstCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.firstCalendar').mouseout(function(){
+    	$('.firstCalendar').css('border' , 'none');
+    })
+
+
+    $('.secondCalendar').mouseover(function(){
+    	$('.secondCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.secondCalendar').mouseout(function(){
+    	$('.secondCalendar').css('border' , 'none');
+    })
 
 //picCarousel();
 
@@ -21,3 +43,4 @@ function smoothScroll(speed) {
     });
 }
 
+var randomTimeValue = setInterval(function(){ Math.ceil(Math.random() * 5); },2000);
