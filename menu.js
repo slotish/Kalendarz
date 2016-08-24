@@ -1,13 +1,14 @@
 
 
 $( document ).ready(function() {
+	setTimeout(function(){
     $('.first_carousel').carousel({
     	interval: 3000,
     	pause: null
-    });
+    });}, 1500);
 
     $('.second_carousel').carousel({
-    	interval: 5000,
+    	interval: 3000,
     	pause: null
     });
     smoothScroll(1000);

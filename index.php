@@ -33,7 +33,7 @@ session_start();
     <!-- Nagłówek -->
     <div class="row send">
         <div class="col-md-4">
-          <input type="button" id="saveData" onclick="saveData()" value="Zapisz">
+          <input type="button" id="saveData" onclick="preview()" value="Podgląd">
           <input type="button" id="sendData" onclick="sendData()" value="Wyślij">
           <input type="button" id="cleanData" onclick="cleanData()" value="Czyść">
           <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
@@ -54,6 +54,14 @@ session_start();
                 <br>
             </div>
         </div>
+    </div>
+
+
+    <div id="preview_loader">
+
+    <img src="images/loader.gif">
+
+
     </div>
     <!-- FORMULARZ -->
     <div class="container">

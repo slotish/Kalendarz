@@ -3,9 +3,10 @@ $(document).ready(function() {
     loadPhoto();
     initCalendar();
     initTextarea();
-
+    $('#preview_loader').hide();
 });
 var pageCounter;
+
 
 function nextPage(){
 	if (pageCounter >= 11){
@@ -719,7 +720,12 @@ for (var i = 0 ; i < 1000 ; i++){
 // Clean i Load!
 
 
-
+function preview(){
+	$('#preview_loader').show().html("<img src=\"images/loader.gif\">");
+	$.post("getpreview.php", function( data ){
+		$('#preview_loader').html( data );
+	})
+}
 
 
 
