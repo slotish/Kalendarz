@@ -29,9 +29,6 @@ $( document ).ready(function() {
     $('.secondCalendar').mouseout(function(){
     	$('.secondCalendar').css('border' , 'none');
     })
-
-//picCarousel();
-
     
 });
 
@@ -44,4 +41,3 @@ function smoothScroll(speed) {
     });
 }
 
-var randomTimeValue = setInterval(function(){ Math.ceil(Math.random() * 5); },2000);

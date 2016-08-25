@@ -26,10 +26,40 @@ session_start();
 -->
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body class="mouseClass">
+    <div id="top_menu">
+      <a name="top_Anchor" id="top_Anchor">
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-1">
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <a href="http://drukarniarawicz.pl"><img class="top_menu_logo" src="images/Logo.png"></a>
+        </div>
+        
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div>
+            <p class="top_menu_text text_no_1"><a href="#"> POWRÓT </a></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div>
+            <p class="top_menu_text text_no_2"><a href="#"> Pomoc </a></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div >
+            <p class="top_menu_text text_no_3"><a href="#"> Regulamin </a></p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <p class="top_menu_text text_no_3"><a href="#"> Cennik </a></p>
+        </div>
+      </div>
+    </div>
     <!-- Nagłówek -->
     <div class="row send">
         <div class="col-md-4">
@@ -39,6 +69,7 @@ session_start();
           <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
           <input type="button" id="prevButton" onclick="prevPage()" value="Cofnij">
           <input type="button" id="nextButton" onclick="nextPage()" value="Następna">
+          <p style="font-size:68pt;"> ---> </p>
         </div>
         <div class="col-md-6">
             <h2> Prześlij zdjęcia: </h2>
@@ -56,11 +87,9 @@ session_start();
         </div>
     </div>
 
-
     <div id="preview_loader">
 
     <img src="images/loader.gif">
-
 
     </div>
     <!-- FORMULARZ -->
@@ -123,6 +152,17 @@ session_start();
             </div>
         </div>
     </div>
+
+ <div id="bottom_menu">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+      <a href="http://drukarniarawicz.pl"><img class="img-responsive center-block" src="images/Logo.png"></a>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+      <p id="back_to_top" class="top_menu_text text_no_5"><a href="#top_Anchor"> Powrót na górę strony </a></p>
+    </div>
+  </div>
+</div>
 </body>
 
 <script type="text/javascript" src="jquery2.1.4.min.js"></script>

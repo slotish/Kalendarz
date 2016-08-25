@@ -4,6 +4,7 @@ $(document).ready(function() {
     initCalendar();
     initTextarea();
     $('#preview_loader').hide();
+    smoothScroll(1000);
 });
 var pageCounter;
 
@@ -725,6 +726,15 @@ function preview(){
 	$.post("getpreview.php", function( data ){
 		$('#preview_loader').html( data );
 	})
+}
+
+function smoothScroll(speed) {
+    $('#back_to_top').click(function() {
+        $('html, body').animate({
+            scrollTop:$('#top_Anchor').offset().top
+        }, speed);
+        event.preventDefault();
+    });
 }
 
 
