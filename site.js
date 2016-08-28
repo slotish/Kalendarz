@@ -6,9 +6,14 @@ $(document).ready(function() {
     $('#preview_loader').hide();
     smoothScroll(1000);
 
-    $('#pdffile').change(function(){
+    $('#hiddenInput').change(function(){
      $('#subfile').val($(this).val());
 });
+
+    $('#visibleInpuButton').click(function(){
+    	$('#hiddenInput').click();
+    	return;
+    })
 
 });
 var pageCounter;

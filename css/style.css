@@ -204,15 +204,21 @@ a:hover, a:active {
 
 
 
-.add_picture_input input[type="file"] {
-  padding: 10px !important;
-  border: solid 1px #dcdcdc!important;
-  transition: box-shadow 0.3s, border 0.3s!important;
+#hiddenInput {
+  visibility: hidden;
 }
-.add_picture_input input[type="file"]:focus,
-.add_picture_input input[type="file"].focus {
-  border: solid 1px #707070!important;
-  box-shadow: 0 0 5px 1px #969696!important;
+
+#subfile {
+  height: 25px;
+}
+
+.input_txt{
+ font-size: 12pt;
+ line-height: 10px !important;
+}
+
+.visible_input {
+  height: 25px;
 }
 
   .teaser_button:hover {

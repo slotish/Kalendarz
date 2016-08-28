@@ -71,17 +71,7 @@ session_start();
           <input type="button" id="nextButton" onclick="nextPage()" value="Następna">
         </div>
             
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="InputFile">
-                    <p>Styczeń</p>
-                </label>
-                  <form id="getImage" enctype="multipart/form-data">
-                    <input class="f" type="file" name="fileToUpload" id="fileToUpload">
-                  </form>
-                <br>
-            </div>
-        </div>
+      
     </div>
     <div class="container">
         <div class="row">
@@ -111,9 +101,13 @@ session_start();
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <form id="getImage" enctype="multipart/form-data">
                     <p>DODAJ ZDJĘCIE</p>
-                    <input class="f add_picture_input" type="file" name="fileToUpload" id="fileToUpload">
-                    <button type="button" class="btn btn-file">Link</button>
-                    <input id="pdffile" style="visibility: hidden;" name="file" type="file" />
+                    <div class="input-group">
+                        <a class="btn btn-default visible_input" onclick="$('#hiddenInput').click()"><p class="input_txt">Szukaj</p></a>
+                        <input type="text" id="subfile" class="input-sm">
+                        <input id="hiddenInput"  name="file" type="file" class="f input-large" />
+                    </div>
+                        
+                    </div>
                 </form>
             </div>
 
