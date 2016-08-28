@@ -5,6 +5,11 @@ $(document).ready(function() {
     initTextarea();
     $('#preview_loader').hide();
     smoothScroll(1000);
+
+    $('#pdffile').change(function(){
+     $('#subfile').val($(this).val());
+});
+
 });
 var pageCounter;
 
@@ -159,7 +164,7 @@ function initTextarea(){
 function clickedButton(n) {
    
 
-    borderStyle = "2px solid #FF0C02";
+    borderStyle = "inset 4px";
     button = "button" + n;
     function border() {
         document.getElementById(button).style.border = borderStyle;

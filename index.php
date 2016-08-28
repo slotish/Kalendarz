@@ -69,11 +69,8 @@ session_start();
           <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
           <input type="button" id="prevButton" onclick="prevPage()" value="Cofnij">
           <input type="button" id="nextButton" onclick="nextPage()" value="Następna">
-          <p style="font-size:68pt;"> ---> </p>
         </div>
-        <div class="col-md-6">
-            <h2> Prześlij zdjęcia: </h2>
-        </div>
+            
         <div class="col-md-2">
             <div class="form-group">
                 <label for="InputFile">
@@ -86,11 +83,46 @@ session_start();
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="currentMonth">
+                    <h1> STYCZEŃ </h1>
+                </div>
+            </div>
+                
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <form id="getImage" enctype="multipart/form-data">
+                    <p>DODAJ ZDJĘCIE</p>
+                    <input class="f add_picture_input" type="file" name="fileToUpload" id="fileToUpload">
+                    <button type="button" class="btn btn-file">Link</button>
+                    <input id="pdffile" style="visibility: hidden;" name="file" type="file" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+
 
     <div id="preview_loader">
-
-    <img src="images/loader.gif">
-
+        <img src="images/loader.gif">
     </div>
     <!-- FORMULARZ -->
     <div class="container">

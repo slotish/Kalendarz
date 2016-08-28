@@ -201,6 +201,20 @@ a:hover, a:active {
   border-radius: 50%;
 
 }
+
+
+
+.add_picture_input input[type="file"] {
+  padding: 10px !important;
+  border: solid 1px #dcdcdc!important;
+  transition: box-shadow 0.3s, border 0.3s!important;
+}
+.add_picture_input input[type="file"]:focus,
+.add_picture_input input[type="file"].focus {
+  border: solid 1px #707070!important;
+  box-shadow: 0 0 5px 1px #969696!important;
+}
+
   .teaser_button:hover {
   background-color: #50A150;
   -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
@@ -266,22 +280,34 @@ a:hover, a:active {
  
 
 .toolbar {
+  /*
   background-image: url("../images/crossword.png") !important;
   background-repeat: repeat;
+  */
+  background-color: #D6D6D6;
   position: fixed;
   border-style: solid;
+  border-color:  #858585; 
   top: 40%;
   padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
  }
 
  .toolbox {
   padding: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   max-width: 50px;
   max-height: 50px;
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
  }
 
  .toolbox:hover {
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: #8CD0FF !important;
  }
 
  .overflow {
@@ -324,9 +350,22 @@ form .input-row {
 
 }
 
+#button1 {
+  border: outset 4px;
+}
 
- 
-  
- 
+#button2 {
+  border: outset 4px;
+}
 
+#button3 {
+  border: outset 4px;
+}
 
+#button4 {
+  border: outset 4px;
+}
+
+#button5 {
+  border: outset 4px;
+}
