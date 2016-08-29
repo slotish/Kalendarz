@@ -63,7 +63,7 @@ session_start();
     <!-- Nagłówek -->
     <div class="row send">
         <div class="col-md-4">
-          <input type="button" id="saveData" onclick="preview()" value="Podgląd">
+          
           <input type="button" id="sendData" onclick="sendData()" value="Wyślij">
           <input type="button" id="cleanData" onclick="cleanData()" value="Czyść">
           <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
@@ -76,16 +76,19 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             </div>
 
+           
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="currentMonth">
-                    <h1> STYCZEŃ </h1>
+                        <h1> STYCZEŃ </h1>
                 </div>
             </div>
+
                 
             <div class="col-lg-4 col-md-4 col-sm-4">
-                
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             </div>
         </div>
 
@@ -103,7 +106,7 @@ session_start();
                     <p>DODAJ ZDJĘCIE</p>
                     <div class="input-group">
                         <a class="btn btn-default visible_input" onclick="$('#hiddenInput').click()"><p class="input_txt">Szukaj</p></a>
-                        <input type="text" id="subfile" class="input-sm">
+                        <input type="text" id="subfile" class="input-sm " disabled>
                         <input id="hiddenInput"  name="file" type="file" class="f input-large" />
                     </div>
                         
@@ -122,6 +125,7 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <button class="teaser_button toolbar_button" type="button" id="saveData" onclick="preview()" value="Podgląd"><p> Podgląd </p></button>
                 <!-- Toolbar -->
                 <div class="toolbar">
                     <table>
@@ -153,6 +157,7 @@ session_start();
                     </table>
                     <!-- Toolbar KONIEC -->
                 </div>
+                <button class="teaser_button toolbar_button2" type="button" id="cleanData" onclick="cleanData()" value="Czyść"> <p>Reset</p></button>
             </div>
         </div>
     </div>
@@ -170,10 +175,11 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3">         
+                    <p class="paddtop">Opisz dzień miesiąca:</p>
                     <img src="images/plus.png" class="addform" onclick="addDayPlate()">
-                      <div id="addedForm">
-                    </div>
+                    <div id="addedForm">
+                </div>
                 </div>
             </div>
         </div>
