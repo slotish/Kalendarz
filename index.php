@@ -76,7 +76,7 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-left" onclick="prevPage()" aria-hidden="true"></span>
             </div>
 
            
@@ -88,32 +88,42 @@ session_start();
 
                 
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-right" onclick="nextPage()" aria-hidden="true"></span>
             </div>
         </div>
 
+       
+
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-3 col-md-3 col-sm-3">
 
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <button class="teaser_button" type="button" id="saveData" onclick="preview()" value="Podgląd"><p class="centered"> Podgląd </p></button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <button class="teaser_button" type="button" id="cleanData" onclick="cleanData()"" value="Podgląd"><p class="centered"> Czyść </p></button>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-2 col-md-2 col-sm-2">
                 <form id="getImage" enctype="multipart/form-data">
                     <p>DODAJ ZDJĘCIE</p>
                     <div class="input-group">
                         <a class="btn btn-default visible_input" onclick="$('#hiddenInput').click()"><p class="input_txt">Szukaj</p></a>
                         <input type="text" id="subfile" class="input-sm " disabled>
                         <input id="hiddenInput"  name="file" type="file" class="f input-large" />
+
                     </div>
-                        
                     </div>
                 </form>
             </div>
 
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+           <a href="#"> <button id="ready_to_send" onclick="sendData()" type="button" ><p class="centered"> Gotowe! </p></button></a>
         </div>
     </div>
 
@@ -125,7 +135,6 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button class="teaser_button toolbar_button" type="button" id="saveData" onclick="preview()" value="Podgląd"><p> Podgląd </p></button>
                 <!-- Toolbar -->
                 <div class="toolbar">
                     <table>
@@ -157,7 +166,6 @@ session_start();
                     </table>
                     <!-- Toolbar KONIEC -->
                 </div>
-                <button class="teaser_button toolbar_button2" type="button" id="cleanData" onclick="cleanData()" value="Czyść"> <p>Reset</p></button>
             </div>
         </div>
     </div>

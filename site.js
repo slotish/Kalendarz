@@ -8,12 +8,12 @@ $(document).ready(function() {
 
     $('#hiddenInput').change(function(){
      $('#subfile').val($(this).val());
-});
+    });
 
     $('#visibleInpuButton').click(function(){
     	$('#hiddenInput').click();
     	return;
-    })
+    });
 
 });
 var pageCounter;
@@ -169,8 +169,8 @@ function initTextarea(){
 function clickedButton(n) {
    
 
-    borderStyle = "inset 4px";
-    button = "button" + n;
+    var borderStyle = "inset 4px";
+    var button = "button" + n;
     function border() {
         document.getElementById(button).style.border = borderStyle;
     }
