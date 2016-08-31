@@ -242,6 +242,7 @@ function loadPhoto() {
         fr.onload = function(ev2) {
             console.dir(ev2);
             $('#i').attr('src', ev2.target.result);
+            resetImageData = new Image();
         };
         fr.readAsDataURL(f);
     });
@@ -297,20 +298,20 @@ function Image(){
 	
     this.picturePosition = $("#i").offset()
     
-    this.originalWidth = $(".photo").width();
-    this.originalHeight = $(".photo").height();
+    this.originalWidth = $("#i").width();
+    this.originalHeight = $("#i").height();
     this.ratio = this.originalWidth / this.originalHeight;
     this.reset = function(){
-        $(".photo").width(this.originalWidth);
-        $(".photo").height(this.originalHeight);
-        $(".photo").offset({
+        $("#i").width(this.originalWidth);
+        $("#i").height(this.originalHeight);
+        $("#i").offset({
         top: this.picturePosition.top,
         left: this.picturePosition.left
     });
     }
 }
 
-var resetImageData = new Image();
+var resetImageData;
 
 function Page() {
 
@@ -645,14 +646,15 @@ function loadData(){
 		return;
 	  }
 	console.log(currentPage.serializedData);
+    var tmp = currentPage.serializedData["rotate"];
+    currentPage.rotate(tmp);
 	$("#i").offset({
         top: currentPage.serializedData['offsetY'],
         left: currentPage.serializedData['offsetX'],
     });
     $(".photo").width(currentPage.serializedData["width"]);
     $(".photo").height(currentPage.serializedData["height"]);
-    var tmp = currentPage.serializedData["rotate"];
-    currentPage.rotate(tmp);
+    
 
 
 	$.post("newDayPlate.php",{group:true, days:currentPage.serializedData['addCommentedDays'] , colors:currentPage.serializedData['color'] , comments:currentPage.serializedData['textareaComment'] }).done(function(data){
