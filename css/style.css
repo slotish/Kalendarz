@@ -59,6 +59,20 @@ html , body {
 
 }
 
+#top_menu_index {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  border-bottom: solid 1px #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1000;
+
+}
+
 #bottom_menu {
   background-image: url("../images/crossword.png") !important;
   background-repeat: repeat;
@@ -192,8 +206,9 @@ a:hover, a:active {
 }
 
 .currentMonth {
-  padding-bottom: 25%;
+  padding-bottom: 1%;
 }
+
 
 .teaser_button {
    margin-top: 10%;
@@ -204,15 +219,36 @@ a:hover, a:active {
    width: 100px;
 
 }
+.toolbar_button {
+   margin-bottom: 20px;
+   border-radius: 20px;
+   background-image: url("../images/crossword.png") !important;
+   background-repeat: repeat;
+   border: solid 2px #000;
+   width: 100px;
+   position: absolute;
+   
+
+}
+
+.first_toolbar {
+  bottom: 5px;
+}
+
+.second_toolbar {
+
+}
+
+
 
 #ready_to_send {
-   margin-top: 10%;
+   margin-top: 20% !important;
    border-radius: 20px;
    background-image: url("../images/crossword.png") !important;
    background-repeat: repeat;
    border: solid 2px #000;
    width: 200px;
-
+   position: absolute;
    display: block;
    margin: 0 auto;
    margin-top: 2%;
@@ -225,7 +261,7 @@ a:hover, a:active {
   background-image: none !important;
   background-color: green !important;
 
- z-index: -1;
+
   -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
   -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
   box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
@@ -236,7 +272,7 @@ a:hover, a:active {
 
 
 #hiddenInput {
-  visibility: hidden;
+  display: none;
 }
 
 #subfile {
@@ -252,7 +288,7 @@ a:hover, a:active {
   height: 25px;
 }
 
-.teaser_button:hover {
+.teaser_button:hover , .toolbar_button:hover {
   -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
   -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
   box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
@@ -273,7 +309,10 @@ a:hover, a:active {
 
 .button_text {
   padding-top: 5%;
+
 }
+
+
 
 .padding_menu {
   padding-left: 10% !important;
@@ -323,11 +362,12 @@ a:hover, a:active {
   background-repeat: repeat;
   */
   background-color: #D6D6D6;
-  position: fixed;
+  position: absolute;
   margin-left: 10px;
   border-style: solid;
   border-color:  #858585; 
-  top: 40%;
+  top: 100px;
+  width:80px;
   padding: 10px;
   border-radius: 5px;
   -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
@@ -373,10 +413,15 @@ form .input-row {
 
 .addform {
   padding-bottom:10%;
+  padding-left: 10px;
 }
 
 .paddtop {
-  padding-top: 5%;
+  padding-top: 8%;
+}
+
+.txt_indent {
+  text-indent: 10px;
 }
 
 .glyphicon-chevron-left {
@@ -388,8 +433,13 @@ form .input-row {
 
 .glyphicon-chevron-right {
   font-size: 50px;
-  padding-top:10%;
+  padding-top:25%;
 }
+
+.glyphicon-chevron-left:hover, .glyphicon-chevron-right:hover {
+  cursor: pointer;
+}
+
 .dayForm {
   
 }
