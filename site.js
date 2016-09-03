@@ -736,8 +736,9 @@ for (var i = 0 ; i < 1000 ; i++){
 
 
 function preview(){
+	var template = 1;
 	$('#preview_loader').show().html("<img src=\"images/loader.gif\">");
-	$.post("getpreview.php?month="+pageCounter, function( data ){
+	$.post("getpreview.php?month="+pageCounter+"&template="+template, function( data ){
 		$('#preview_loader').html( data );
 	})
 }
