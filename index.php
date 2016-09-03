@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <!-- NO FOLLOW NO INDEX !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <title></title>
+    <title>Kalendarz</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">

@@ -589,12 +589,14 @@ function addDayPlate() {
 
 function sendData(){
 	currentPage.save();
-	$.post( "submit.php", currentPage.serializedData)
+	var currentMonth = pageCounter;
+	$.post( "submit.php?month="+currentMonth, currentPage.serializedData)
         .done(function( data ) {
             alert( "Data Loaded: " + data );
 			var formData = new FormData($('#getImage')[0]);
+			console.log(formData);
 			    $.ajax({
-			        url: 'upload.php',  //Server script to process data
+			        url: 'upload.php?month='+currentMonth,  //Server script to process data
 			        type: 'POST',
 			        data: formData,
 			        cache: false,
@@ -735,7 +737,7 @@ for (var i = 0 ; i < 1000 ; i++){
 
 function preview(){
 	$('#preview_loader').show().html("<img src=\"images/loader.gif\">");
-	$.post("getpreview.php", function( data ){
+	$.post("getpreview.php?month="+pageCounter, function( data ){
 		$('#preview_loader').html( data );
 	})
 }
