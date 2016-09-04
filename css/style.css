@@ -211,12 +211,13 @@ a:hover, a:active {
 
 
 .teaser_button {
-   margin-top: 10%;
    border-radius: 20px;
    background-image: url("../images/crossword.png") !important;
    background-repeat: repeat;
    border: solid 2px #000;
-   width: 100px;
+   width: 125px;
+   display: block;
+   margin-left: 80%;
 
 }
 .toolbar_button {
@@ -227,6 +228,7 @@ a:hover, a:active {
    border: solid 2px #000;
    width: 100px;
    position: absolute;
+
    
 
 }
@@ -488,3 +490,10 @@ form .input-row {
   border: outset 4px;
 }
 
+.submit_checkbox {
+  top: 15px;
+}
+
+.red {
+  color: #FF2215 !important;
+}

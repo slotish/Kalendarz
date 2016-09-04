@@ -80,7 +80,7 @@ session_start();
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-2">
-                <a href="#"> <button id="ready_to_send" onclick="sendData()" type="button" ><p class="centered"> Gotowe! </p></button></a>
+                <a href="register.html"> <button id="ready_to_send" onclick="sendData()" type="button" ><p class="centered"> Gotowe! </p></button></a>
             </div>
         </div>
     </div>
