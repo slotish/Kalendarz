@@ -752,6 +752,11 @@ function smoothScroll(speed) {
     });
 }
 
+function removeDayPlate(){
+    $(this.this_form).remove();
+
+}
+
 
 
 

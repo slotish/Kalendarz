@@ -288,6 +288,19 @@ a:hover, a:active {
   height: 25px;
 }
 
+.visible_input:hover {
+  background-image: none !important;
+  background-color: green !important;
+
+
+  -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+
+}
+
+
+
 .teaser_button:hover , .toolbar_button:hover {
   -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
   -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
@@ -404,7 +417,7 @@ form .input-row {
 
 
 .paddingleft {
-  padding-left:9%;
+  padding-left:13%;
 }
 
 .form {
@@ -415,6 +428,8 @@ form .input-row {
   padding-bottom:10%;
   padding-left: 10px;
 }
+
+
 
 .paddtop {
   padding-top: 8%;
@@ -472,3 +487,4 @@ form .input-row {
 #button5 {
   border: outset 4px;
 }
+
