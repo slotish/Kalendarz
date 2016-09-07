@@ -752,15 +752,10 @@ function smoothScroll(speed) {
     });
 }
 
-function smoothScroll(speed) {
-    $('#back_to_top').click(function() {
-        $('html, body').animate({
-            scrollTop:$('#top_Anchor').offset().top
-        }, speed);
-        event.preventDefault();
-    });
+function removeDayPlate(n){
+    $('#dayPlate' + n).remove();
+    currentPage.formNumbers-- ;
 }
-
 
 
 

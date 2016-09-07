@@ -40,7 +40,7 @@ for ($x=0; $x<$count; $x++){
                 <input type="color" <?echo "id=\"colorFormPlate".$fromID."\"";?> name="favcolor" value=<?=$selected[$x]["color"];?>>
             </label>
             <label class="paddingleft">
-                <span  <?echo "id=\"removePlate".$fromID."\"";?> class="glyphicon glyphicon-remove" onclick="<?echo "$(\""."#dayPlate".$fromID."\").remove();"?>" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-remove"  onclick="removeDayPlate(<?=$fromID?>);" aria-hidden="true"></span>
             </label>
             <textarea maxlength="15" placeholder="maksymalnie 15 znaków :)"<?echo "id=\"dayPlateTextArea".$fromID."\"";?> class="form-control textarea" rows="2"><?=$selected[$x]["comment"];?></textarea>&nbsp;
         </div>
