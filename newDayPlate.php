@@ -25,28 +25,27 @@ if  (array_key_exists ( "group", $_POST ) ) {
 
 for ($x=0; $x<$count; $x++){
     ?>
-    <div <?echo "id=\"dayPlate".$fromID."\"";?> class="input-row form">
-        <label class="paddingleft">
-            <select <?echo "id=\"dayFormPlate".$fromID."\"";?> name="day" class="dayForm">
-            <?
-            for ($i = 1 ; $i < 32 ; $i++){
-                echo "<option value=\"".$i."\" ".(($i == $selected[$x]["day"])?"selected":"").">".$i."</option>";
-            } 
-            ?>
-            </select>
-        </label>
-        <label class="paddingleft sizeForm">
-            <select name="font">
-                <option>mała</option>
-                <option>średnia</option>
-                <option>duża</option>
-            </select>
-        </label>
-        <label class="paddingleft">
-            <input type="color" <?echo "id=\"colorFormPlate".$fromID."\"";?> name="favcolor" value=<?=$selected[$x]["color"];?>>
-        </label>
-        <textarea maxlength="15" placeholder="maksymalnie 15 znaków :)"<?echo "id=\"dayPlateTextArea".$fromID."\"";?> class="form-control textarea" rows="2"><?=$selected[$x]["comment"];?></textarea>&nbsp;
-    </div>
+    
+        <div class="this_form"  <?echo "id=\"dayPlate".$fromID."\"";?> class="input-row form">
+            <label class="paddingleft">
+                <select <?echo "id=\"dayFormPlate".$fromID."\"";?> name="day" class="dayForm">
+                <?
+                for ($i = 1 ; $i < 32 ; $i++){
+                    echo "<option value=\"".$i."\" ".(($i == $selected[$x]["day"])?"selected":"").">".$i."</option>";
+                } 
+                ?>
+                </select>
+            </label>
+            <label class="paddingleft">
+                <input type="color" <?echo "id=\"colorFormPlate".$fromID."\"";?> name="favcolor" value=<?=$selected[$x]["color"];?>>
+            </label>
+            <label class="paddingleft">
+                <span  <?echo "id=\"removePlate".$fromID."\"";?> class="glyphicon glyphicon-remove" onclick="<?echo "$(\""."#dayPlate".$fromID."\").remove();"?>" aria-hidden="true"></span>
+            </label>
+            <textarea maxlength="15" placeholder="maksymalnie 15 znaków :)"<?echo "id=\"dayPlateTextArea".$fromID."\"";?> class="form-control textarea" rows="2"><?=$selected[$x]["comment"];?></textarea>&nbsp;
+        </div>
+   
+  
 <?
 ++$fromID;
 }

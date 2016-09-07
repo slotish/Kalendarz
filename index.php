@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <!-- NO FOLLOW NO INDEX !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <title></title>
+    <title>Kalendarz</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -31,7 +31,7 @@ session_start();
 </head>
 
 <body class="mouseClass">
-    <div id="top_menu">
+    <div id="top_menu_index">
       <a name="top_Anchor" id="top_Anchor">
       <div class="row">
         <div class="col-sm-1 col-md-1 col-lg-1">
@@ -61,18 +61,6 @@ session_start();
       </div>
     </div>
     <!-- Nagłówek -->
-    <div class="row send">
-        <div class="col-md-4">
-          
-          <input type="button" id="sendData" onclick="sendData()" value="Wyślij">
-          <input type="button" id="cleanData" onclick="cleanData()" value="Czyść">
-          <input type="button" id="loadData" onclick="loadData()" value="Wczytaj">
-          <input type="button" id="prevButton" onclick="prevPage()" value="Cofnij">
-          <input type="button" id="nextButton" onclick="nextPage()" value="Następna">
-        </div>
-            
-      
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -87,43 +75,13 @@ session_start();
             </div>
 
                 
-            <div class="col-lg-4 col-md-4 col-sm-4">
-                <span class="glyphicon glyphicon-chevron-right" onclick="nextPage()" aria-hidden="true"></span>
-            </div>
-        </div>
-
-       
-
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3">
-
-            </div>
             <div class="col-lg-2 col-md-2 col-sm-2">
-                <button class="teaser_button" type="button" id="saveData" onclick="preview()" value="Podgląd"><p class="centered"> Podgląd </p></button>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2">
-                <button class="teaser_button" type="button" id="cleanData" onclick="cleanData()"" value="Podgląd"><p class="centered"> Czyść </p></button>
+                <span class="glyphicon glyphicon-chevron-right right" onclick="nextPage()" aria-hidden="true"></span>
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-2">
-                <form id="getImage" enctype="multipart/form-data">
-                    <p>DODAJ ZDJĘCIE</p>
-                    <div class="input-group">
-                        <a class="btn btn-default visible_input" onclick="$('#hiddenInput').click()"><p class="input_txt">Szukaj</p></a>
-                        <input type="text" id="subfile" class="input-sm " disabled>
-                        <input id="hiddenInput"  name="file" type="file" class="f input-large" />
-
-                    </div>
-                    </div>
-                </form>
+                <a href="register.html"> <button id="ready_to_send" onclick="sendData()" type="button" ><p class="centered"> Gotowe! </p></button></a>
             </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                
-            </div>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12">
-           <a href="#"> <button id="ready_to_send" onclick="sendData()" type="button" ><p class="centered"> Gotowe! </p></button></a>
         </div>
     </div>
 
@@ -134,8 +92,16 @@ session_start();
     <!-- FORMULARZ -->
     <div class="container">
         <div class="row">
+           
+            <div class="col-md-12">
+                 <button class="toolbar_button first_toolbar" type="button" id="saveData" onclick="preview()" value="Podgląd"><p class="centered"> Podgląd </p></button>
+            </div>
+            <div class="col-md-12">
+                <button class="toolbar_button second_toolbar" type="button" id="cleanData" onclick="cleanData()" value="Czyść"><p class="centered"> Czyść </p></button>      
+            </div>
             <div class="col-md-12">
                 <!-- Toolbar -->
+                
                 <div class="toolbar">
                     <table>
                         <tr>
@@ -183,11 +149,23 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">         
-                    <p class="paddtop">Opisz dzień miesiąca:</p>
+                <div class="col-md-3"> 
+                        <form id="getImage" enctype="multipart/form-data">
+                            <p class="paddtop">DODAJ ZDJĘCIE</p>
+                        <div class="input-group">
+                            <a class="btn btn-default visible_input" onclick="$('#hiddenInput').click()">
+                                <p class="input_txt">Szukaj</p>
+                            </a>
+                            <input type="text" id="subfile" class="input-sm " disabled>
+                            <input id="hiddenInput"  name="file" type="file" class="f input-large" />
+                        </div>
+                        </form>
+                
+                        
+                    <p class="paddtop txt_indent">Opisz dzień miesiąca:</p>
                     <img src="images/plus.png" class="addform" onclick="addDayPlate()">
                     <div id="addedForm">
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
