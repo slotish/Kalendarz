@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 });
 var pageCounter;
-
+var monthsNames = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
 
 function nextPage(){
 	if (pageCounter >= 11){
@@ -25,9 +25,8 @@ function nextPage(){
 	}
 	cleanData();
 	pageCounter++;
-	initPage();
 	currentPage = kalendar[pageCounter];
-		
+	initPage();
 	loadData();
 	console.log(currentPage.rotation);
 	console.log(currentPage.serializedData);
@@ -40,8 +39,8 @@ function prevPage(){
 	console.log(currentPage.rotation);
 	cleanData();		
 	pageCounter--;
-	initPage();
 	currentPage = kalendar[pageCounter];
+    initPage();
 	loadData();
 	console.log(currentPage.serializedData);
 }
@@ -79,7 +78,7 @@ function initCalendar(){
 
 	console.log("Work?")
 	for(var i = 0 ; i < 12 ; i++){
-		kalendar[i] = new Page();
+		kalendar[i] = new Page(i);
 		kalendar[i].addTool(new MoveTool(), 1);
     	kalendar[i].addTool(new RotateTool(), 3);
     	kalendar[i].addTool(new ResizeTool(), 2);
@@ -150,6 +149,7 @@ function initPage() {
 
     currentPage.setImage();
     currentPage.switchOffTools();
+    $("#monthName").html(currentPage.name);
 
 }
 
@@ -242,11 +242,11 @@ function loadPhoto() {
         fr.onload = function(ev2) {
             console.dir(ev2);
             $('#i').attr('src', ev2.target.result);
-            resetImageData = new Image();
+            currentPage.setImage();
         };
         fr.readAsDataURL(f);
     });
-
+    
 
 }
 
@@ -294,13 +294,20 @@ function checkImageClick(p, q) {
 
 }
 
-function Image(){
+function Picture(){
 	
     this.picturePosition = $("#i").offset()
-    
     this.originalWidth = $("#i").width();
     this.originalHeight = $("#i").height();
     this.ratio = this.originalWidth / this.originalHeight;
+    this.path = "images/melancolia.jpg";
+
+    this.load = function(_path){
+        this.path = _path;
+        $('#i').attr('src',_path);
+            //currentPage.setImage();
+    }
+
     this.reset = function(){
         $("#i").width(this.originalWidth);
         $("#i").height(this.originalHeight);
@@ -311,18 +318,19 @@ function Image(){
     }
 }
 
-var resetImageData;
+//var resetImageData;
 
-function Page() {
+function Page(_monthID) {
 
     this.selectedTool = undefined;
     var toolActivated = false;
     this.tools = [];
+    this.name = monthsNames[_monthID];
     this.cursor = {
         x: 0,
         y: 0,
     };
-    this.image = {};
+    this.image = new Picture();
     this.modifier = false;
     this.rotation = 0;
     this.formNumbers = 1;
@@ -383,7 +391,7 @@ function Page() {
     }
 
    this.setImage = function(){
-        this.image = new Image();
+        this.image = new Picture();
    }
 
    this.switchOffTools = function(){
@@ -631,7 +639,8 @@ function cleanData(){
   var tmp = -(currentPage.rotation);
   currentPage.rotate(tmp);
   currentPage.rotation = 0;
-  resetImageData.reset();
+  currentPage.image.reset();
+  //resetImageData.reset();
   for (var i=1; i<=currentPage.formNumbers; i++){
   		$("#dayPlate" + i).remove();
   }
@@ -641,6 +650,7 @@ function cleanData(){
 
 function loadData(){
 
+    
 	$("#cleanData").prop('disabled', false);
 	if (!currentPage.serializedData){
 		return;

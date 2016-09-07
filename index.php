@@ -82,7 +82,7 @@ session_start();
            
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="currentMonth">
-                        <h1> STYCZEŃ </h1>
+                        <h1 id="monthName"> STYCZEŃ </h1>
                 </div>
             </div>
 
